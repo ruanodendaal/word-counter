@@ -45,5 +45,3 @@ WordCounter.prototype.mapPrimeNumbers = function() {
     }
   }
 };
-
-module.exports = WordCounter;
