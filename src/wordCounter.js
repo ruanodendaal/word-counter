@@ -22,18 +22,27 @@ WordCounter.prototype.wordFreq = function() {
     }
     countMap[w] ++;
   });
-
+  this.countMap = countMap;
   return countMap;
 };
 
 WordCounter.prototype.isPrimeNumber = function(number) {
-  var sqrtNum = Math.floor( Math.sqrt(number) );
+  var sqrtNum = Math.sqrt(number);
     var prime = (number !=1);
-    for(var i=2; i < sqrtNum; i++) {
+    for(var i = 2; i <= sqrtNum; i++) {
       if(number % i == 0) {
         prime = false;
         break;
       }
     }
   return prime;
+};
+
+// add true or false to countMap if number is prime
+WordCounter.prototype.mapPrimeNumbers = function() {
+  for (var key in this.countMap) {
+    if (this.countMap.hasOwnProperty(key)) {
+      this.countMap[key] = [this.countMap[key], this.isPrimeNumber(this.countMap[key])]
+    }
+  }
 };
