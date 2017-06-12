@@ -20,9 +20,11 @@
     "url": "https://github.com/ruanodendaal/word-counter/issues"
   },
   "homepage": "https://github.com/ruanodendaal/word-counter#readme",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  },
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.3",
-    "jasmine": "^2.6.0"
+    "express": "^4.15.3"
   }
 }
