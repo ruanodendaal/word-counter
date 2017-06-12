@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/ruanodendaal/word-counter#readme",
   "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
     "jasmine": "^2.6.0"
   }
 }
