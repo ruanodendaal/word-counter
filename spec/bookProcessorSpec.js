@@ -6,12 +6,18 @@ describe('BookProcessor', function() {
   var bookProcessor;
 
   beforeEach(function() {
-    str = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
+    str = "They, they he he he clothes Clothes and fires #and mother goose goose!";
     wordCounter = new WordCounter(str);
     bookProcessor = new BookProcessor(wordCounter);
   });
 
   it('initializes with a wordCounter object', function() {
     expect(bookProcessor.wordProcessor).toEqual(wordCounter);
+  });
+
+  describe('#runProcessing', function() {
+    it('should return countMap with number of occurances and whether it was prime or not', function() {
+      expect(bookProcessor.runProcessing()).toEqual(wordCounter.countMap);
+    });
   });
 });
