@@ -1,0 +1,25 @@
+{
+  "name": "word-counter",
+  "version": "1.0.0",
+  "description": "An application that counts words in a text file",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanodendaal/word-counter.git"
+  },
+  "author": "Ruan Odendaal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruanodendaal/word-counter/issues"
+  },
+  "homepage": "https://github.com/ruanodendaal/word-counter#readme",
+  "dependencies": {
+    "jasmine": "^2.6.0"
+  }
+}

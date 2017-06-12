@@ -11,4 +11,8 @@ describe('WordCounter', function() {
     expect(wordCounter.countMap).toEqual({});
   });
 
+  it('initializes with an empty wordList array', function() {
+    expect(wordCounter.wordList).toEqual([]);
+  });
+
 });

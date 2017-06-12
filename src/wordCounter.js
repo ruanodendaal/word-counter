@@ -2,4 +2,5 @@
 
 function WordCounter() {
   this.countMap = {};
+  this.wordList = [];
 }
