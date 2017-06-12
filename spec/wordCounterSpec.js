@@ -1,8 +1,9 @@
 'use strict';
+var WordCounter = require("../public/javascripts/wordCounter");
+var str = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
+var wordCounter = new WordCounter(str);
 
 describe('WordCounter', function() {
-  var wordCounter;
-  var str;
 
   beforeEach(function() {
     str = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
@@ -11,10 +12,6 @@ describe('WordCounter', function() {
 
   it('initializes with an empty countMap hash', function() {
     expect(wordCounter.countMap).toEqual({});
-  });
-
-  it('initializes with an empty wordList array', function() {
-    expect(wordCounter.wordList).toEqual([]);
   });
 
   describe('#removeUnwantedChars', function() {

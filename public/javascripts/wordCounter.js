@@ -2,7 +2,6 @@
 
 function WordCounter(str) {
   this.countMap = {};
-  this.wordList = [];
   this._str = str;
 }
 
@@ -46,3 +45,5 @@ WordCounter.prototype.mapPrimeNumbers = function() {
     }
   }
 };
+
+module.exports = WordCounter;
