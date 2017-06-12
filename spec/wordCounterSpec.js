@@ -29,7 +29,8 @@ describe('WordCounter', function() {
       var testStr = "They, they he clothes and fires and mother goose goose";
       wordCounter = new WordCounter(testStr);
       wordCounter.removeUnwantedChars();
-      expect(wordCounter.wordFreq()).toEqual({ they: 2, and: 2,
+      wordCounter.wordFreq()
+      expect(wordCounter.countMap).toEqual({ they: 2, and: 2,
                                       he: 1, clothes: 1,
                                       fires: 1, mother: 1,
                                       goose: 2});
@@ -42,7 +43,28 @@ describe('WordCounter', function() {
     });
 
     it('should return true for 41 as a prime number', function() {
+      expect(wordCounter.isPrimeNumber(4)).toEqual(false);
+    });
+
+    it('should return true for 41 as a prime number', function() {
       expect(wordCounter.isPrimeNumber(41)).toEqual(true);
     });
+  });
+
+  describe('#mapPrimeNumbers', function() {
+    it('should include whether or not a word frequency is a prime number', function() {
+      wordCounter.countMap = {they: 3, and: 11,
+                              he: 4, clothes: 3,
+                              fires: 5, mother: 1,
+                              goose: 2};
+      wordCounter.mapPrimeNumbers()
+      expect(wordCounter.countMap).toEqual({
+                                            they: [ 3, true ], and: [ 11, true ],
+                                            he: [ 4, false ], clothes: [ 3, true ],
+                                            fires: [ 5, true ], mother: [ 1, false ],
+                                            goose: [ 2, true ]
+                                          });
+
+    })
   })
 });
