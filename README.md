@@ -1,0 +1,29 @@
+# Tech test
+
+## Brief
+Given a book in a text file (http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt)
+1. Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.
+2. Output whether the number of times each word appears is a prime number.
+
+Assumptions:
+- Ignore punctuation & capitalisation
+
+## Approach
+
+Firstly I thought about the overall problem and the steps required to solve it. Which I broke down to these steps:
+- Load a text file into a variable as a string.
+- Remove any unwanted characters from the string
+- Iterate through and count all words.
+- Calculate if a particular word count is a prime number.
+- Output result including if a prime number e.g. "'the' appeared 41 times. 41 is a Prime number".
+
+
+Then I decided on which testing framework. Jasmine since it's one I know and have used.
+
+## How to run
+
+## Tools/Languages
+
+- Jasmine v2.5.2
+- JavaScript
+- Node v7.9.0
