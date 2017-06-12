@@ -25,16 +25,19 @@ Then I decided on which testing framework. Jasmine since it's one I know and hav
 1. Clone this repository
 `$ git clone https://github.com/ruanodendaal/word-counter`
 
-2. Install node and necessary dependancies 
+2. Install node and necessary dependancies
 ```
 $ cd word-counter
 $ brew install node
 $ npm install
 ```
 
+3. Run local server, with the following command:
+`npm start`
 
+4. Visit `http://localhost:3000/` in your browser
 
-#### To run tests
+### To run tests
 - Find the `SpecRunner.html` in project root.
 - Open it in your browser.
 
