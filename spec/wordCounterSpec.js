@@ -38,11 +38,11 @@ describe('WordCounter', function() {
 
   describe('#isPrimeNumber', function() {
     it('should return false for 1 as a prime number', function() {
-      expect(wordCounter.isPrimeNumber()).toEqual(false);
+      expect(wordCounter.isPrimeNumber(1)).toEqual(false);
     });
 
     it('should return true for 41 as a prime number', function() {
-      expect(wordCounter.isPrimeNumber()).toEqual(true);
+      expect(wordCounter.isPrimeNumber(41)).toEqual(true);
     });
   })
 });
