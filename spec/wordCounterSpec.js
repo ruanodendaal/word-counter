@@ -13,10 +13,6 @@ describe('WordCounter', function() {
     expect(wordCounter.countMap).toEqual({});
   });
 
-  it('initializes with an empty wordList array', function() {
-    expect(wordCounter.wordList).toEqual([]);
-  });
-
   describe('#removeUnwantedChars', function() {
     it('should remove unwanted punctuation', function() {
       var convertedStr = "they needed pretty clothes good fires and a mother goose wall paper";
