@@ -24,7 +24,6 @@ WordCounter.prototype.wordFreq = function() {
     countMap[w] ++;
   });
   this.countMap = countMap;
-  return countMap;
 };
 
 WordCounter.prototype.isPrimeNumber = function(number) {
@@ -43,7 +42,7 @@ WordCounter.prototype.isPrimeNumber = function(number) {
 WordCounter.prototype.mapPrimeNumbers = function() {
   for (var key in this.countMap) {
     if (this.countMap.hasOwnProperty(key)) {
-      this.countMap[key] = [this.countMap[key], this.isPrimeNumber(this.countMap[key])]
+      this.countMap[key] = [ this.countMap[key], this.isPrimeNumber(this.countMap[key]) ]
     }
   }
 };
