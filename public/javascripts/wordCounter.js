@@ -1,5 +1,7 @@
 'use strict';
 
+/* takes in a string and performs all actions on
+  that string */
 function WordCounter(str) {
   this.countMap = {};
   this._str = str;
