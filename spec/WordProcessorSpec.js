@@ -2,11 +2,9 @@
 
 describe('WordProcessor', function() {
   var wordProcessor;
-  var str;
 
   beforeEach(function() {
-    str = " They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper! ";
-    wordProcessor = new WordProcessor(str);
+    wordProcessor = new WordProcessor();
   })
 
   it('initializes with an empty countMap hash', function() {
@@ -14,6 +12,10 @@ describe('WordProcessor', function() {
   });
 
   describe('Removing unwanted characters', function() {
+    beforeEach(function() {
+      wordProcessor.str = " They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper! ";
+    });
+
     it('remove extra spaces', function() {
       var convertedStr = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
       wordProcessor.removeExtraSpaces();
@@ -33,8 +35,9 @@ describe('WordProcessor', function() {
     });
 
     it('remove all unwated characters using all', function() {
+      var str = " They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper! ";
       var cleanStr = "they needed pretty clothes good fires and a mother goose wall paper";
-      wordProcessor.removeUnwantedChars();
+      wordProcessor.removeUnwantedChars(str);
       expect(wordProcessor.str).toEqual(cleanStr);
     });
   });
@@ -42,8 +45,8 @@ describe('WordProcessor', function() {
   describe('Word counts', function() {
     it('counts how many times each word appears', function() {
       var testStr = "They, they he clothes# and fires and mother goose goose";
-      wordProcessor = new WordProcessor(testStr);
-      wordProcessor.removeUnwantedChars();
+      wordProcessor = new WordProcessor();
+      wordProcessor.removeUnwantedChars(testStr);
       wordProcessor.wordFreq()
       expect(wordProcessor.countMap).toEqual({ they: 2, and: 2,
                                       he: 1, clothes: 1,

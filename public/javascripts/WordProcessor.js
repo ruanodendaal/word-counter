@@ -2,13 +2,14 @@
 
 /* takes in a string and performs all actions on
   that string */
-function WordProcessor(str) {
+function WordProcessor() {
   this.countMap = {};
-  this.str = str;
+  this.str;
 }
 
 // remove unwanted characters including uppercase letters
-WordProcessor.prototype.removeUnwantedChars = function() {
+WordProcessor.prototype.removeUnwantedChars = function(str) {
+  this.str = str;
   this.removePunctuation();
   this.removeExtraSpaces();
   this.ignoreCaps();
