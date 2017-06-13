@@ -4,6 +4,7 @@
   to output on the frontend */
 function BookProcessor(wordCounter) {
   this.wordProcessor = wordCounter;
+  // this.dataObj = {};
 }
 // process all steps for a given file
 BookProcessor.prototype.runProcessing = function() {
@@ -13,3 +14,14 @@ BookProcessor.prototype.runProcessing = function() {
 
   return this.dataObj = this.wordProcessor.countMap
 }
+
+BookProcessor.prototype.formatOutput = function() {
+  let wordArray = [];
+  for (let key in this.dataObj) {
+    var htmlWrapper = ""
+    wordArray.push("<li><div>" + `'${key}'&nbsp; frequency: ${this.dataObj[key][0]}&nbsp; | &nbsp; Prime number? &nbsp; ${this.dataObj[key][1]}` + "</div></li>")
+
+  }
+  var header = "<h2>Results:</h2>"
+  return header + "<ul>" + wordArray.join('') + "</ul>";
+};

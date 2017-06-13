@@ -24,11 +24,10 @@ describe('BookProcessor', function() {
   describe('#formatOutput', function() {
     it('should format the output nicely', function() {
       bookProcessor.dataObj = {
-                                they: [ 2, true ], and: [ 1, false ],
-                                he: [ 3, true ], clothes: [ 2, true ]
+                                they: [ 2, true ], and: [ 1, false ]
                               };
 
-      var formattedOutput = "'they' COUNT: 2; Prime number? true\n'and' COUNT: 1; Prime number? false\n'he' COUNT: 3; Prime number? true\n'clothes' COUNT: 2; Prime number? true"
+      var formattedOutput = "<h2>Results:</h2><ul><li><div>'they'&nbsp; frequency: 2&nbsp; | &nbsp; Prime number? &nbsp; true</div></li><li><div>'and'&nbsp; frequency: 1&nbsp; | &nbsp; Prime number? &nbsp; false</div></li></ul>";
       expect(bookProcessor.formatOutput()).toEqual(formattedOutput)
     })
   });
