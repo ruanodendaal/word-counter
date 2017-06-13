@@ -42,7 +42,7 @@ describe('WordProcessor', function() {
   describe('Word counts', function() {
     it('counts how many times each word appears', function() {
       var testStr = "They, they he clothes# and fires and mother goose goose";
-      wordProcessor = new wordProcessor(testStr);
+      wordProcessor = new WordProcessor(testStr);
       wordProcessor.removeUnwantedChars();
       wordProcessor.wordFreq()
       expect(wordProcessor.countMap).toEqual({ they: 2, and: 2,
