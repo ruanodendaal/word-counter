@@ -1,19 +1,29 @@
-$(document).ready(function() {
-  var fileText;
+document.addEventListener("DOMContentLoaded", function() {
 
-  $('#load-btn').click(function(){
+  document.getElementById('load-btn').addEventListener('click', function() {
     var reader = new FileReader();
     reader.addEventListener('load', function() {
-      fileText = this.result;
-      processText(fileText)
-      document.getElementById('fileDisplayArea').innerText = this.result;
+      processText(this.result)
     });
-    reader.readAsText(document.querySelector('input').files[0]);
+
+    var fileText = document.querySelector('input').files[0]
+    reader.readAsText(fileText);
   });
+
+
+  // document.getElementById('run-btn').addEventListener('click', function() {
+  //   var filePath = "./railway-children.txt"
+  //   const fs = require('fs');
+  //   var fileContents = fs.readFileSync(filePath);
+  //   processText(fileContents);
+  // });
+
 
   function processText(fileText) {
     var wordCounter = new WordCounter(fileText);
     var bookProcessor = new BookProcessor(wordCounter);
+    bookProcessor.runProcessing();
 
+    document.getElementById('wordsList').innerHTML = bookProcessor.formatOutput();
   }
 });
