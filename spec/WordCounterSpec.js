@@ -5,7 +5,7 @@ describe('WordCounter', function() {
   var str;
 
   beforeEach(function() {
-    str = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
+    str = " They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper! ";
     wordCounter = new WordCounter(str);
   })
 
@@ -13,14 +13,27 @@ describe('WordCounter', function() {
     expect(wordCounter.countMap).toEqual({});
   });
 
-  describe('#removeUnwantedChars', function() {
+  describe('Removing unwanted characters', function() {
+    it('should remove extra spaces', function() {
+      var convertedStr = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
+      wordCounter.removeExtraSpaces();
+      expect(wordCounter.str).toEqual(convertedStr);
+    });
+
     it('should remove unwanted punctuation', function() {
-      var convertedStr = "they needed pretty clothes good fires and a mother goose wall paper";
-      expect(wordCounter.removeUnwantedChars()).toEqual(convertedStr);
+      var convertedStr = " They needed pretty Clothes good fires and a Mother Goose wall paper ";
+      wordCounter.removeUnwantedChars();
+      expect(wordCounter.str).toEqual(convertedStr);
+    });
+
+    it('should change text capitalisation', function() {
+      var convertedStr = " they needed pretty clothes good fires and a mother goose wall paper ";
+      wordCounter.ignoreCaps();
+      expect(wordCounter.str).toEqual(convertedStr);
     });
   });
 
-  describe('#wordFreq', function() {
+  describe('Word counts', function() {
     it('counts how many times each word appears', function() {
       var testStr = "They, they he clothes and fires and mother goose goose";
       wordCounter = new WordCounter(testStr);
@@ -33,7 +46,7 @@ describe('WordCounter', function() {
     });
   });
 
-  describe('#isPrimeNumber', function() {
+  describe('Prime number calculation', function() {
     it('should return false for 1 as a prime number', function() {
       expect(wordCounter.isPrimeNumber(1)).toEqual(false);
     });
@@ -47,7 +60,7 @@ describe('WordCounter', function() {
     });
   });
 
-  describe('#mapPrimeNumbers', function() {
+  describe('Adding Prime details to countMap', function() {
     it('should include whether or not a word frequency is a prime number', function() {
       wordCounter.countMap = {they: 3, and: 11,
                               he: 4, clothes: 3,
