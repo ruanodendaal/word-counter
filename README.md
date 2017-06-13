@@ -15,7 +15,7 @@ Firstly I thought about the overall problem and the steps required to solve it. 
 - Remove any unwanted characters from the string
 - Iterate through and count all words.
 - Calculate if a particular word count is a prime number.
-- Output result including if a prime number e.g. "'the' appeared 41 times. 41 is a Prime number".
+- Output result including if a prime number e.g. "'the'  frequency: 41 | Prime number?  true".
 
 
 Then I decided on which testing framework. Jasmine since it's one I know and have used.

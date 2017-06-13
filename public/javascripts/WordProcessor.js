@@ -2,44 +2,44 @@
 
 /* takes in a string and performs all actions on
   that string */
-function WordCounter(str) {
+function WordProcessor(str) {
   this.countMap = {};
   this.str = str;
 }
 
 // remove unwanted characters including uppercase letters
-WordCounter.prototype.removeUnwantedChars = function() {
+WordProcessor.prototype.removeUnwantedChars = function() {
   this.removePunctuation();
   this.removeExtraSpaces();
   this.ignoreCaps();
 };
 
-WordCounter.prototype.removePunctuation = function() {
+WordProcessor.prototype.removePunctuation = function() {
   this.str = this.str.replace(/[\W_]+/g, ' ');
 };
 
-WordCounter.prototype.removeExtraSpaces = function() {
+WordProcessor.prototype.removeExtraSpaces = function() {
   this.str = this.str.trim();
 };
 
-WordCounter.prototype.ignoreCaps = function() {
+WordProcessor.prototype.ignoreCaps = function() {
   this.str = this.str.toLowerCase()
 };
 
 // iterate through and count each word
-WordCounter.prototype.wordFreq = function() {
+WordProcessor.prototype.wordFreq = function() {
   var words = this.str.split(/\s/);
-  var countMap = {};
+  var wordMap = {};
   words.forEach(function(w) {
-    if (!countMap[w]) {
-      countMap[w] = 0;
+    if (!wordMap[w]) {
+      wordMap[w] = 0;
     }
-    countMap[w] ++;
+    wordMap[w] ++;
   });
-  this.countMap = countMap;
+  this.countMap = wordMap;
 };
 
-WordCounter.prototype.isPrimeNumber = function(number) {
+WordProcessor.prototype.isPrimeNumber = function(number) {
   var sqrtNum = Math.sqrt(number);
     var prime = (number !=1);
     for(var i = 2; i <= sqrtNum; i++) {
@@ -52,7 +52,7 @@ WordCounter.prototype.isPrimeNumber = function(number) {
 };
 
 // add true or false to countMap if number is prime
-WordCounter.prototype.mapPrimeNumbers = function() {
+WordProcessor.prototype.mapPrimeNumbers = function() {
   for (var key in this.countMap) {
     if (this.countMap.hasOwnProperty(key)) {
       this.countMap[key] = [ this.countMap[key], this.isPrimeNumber(this.countMap[key]) ]

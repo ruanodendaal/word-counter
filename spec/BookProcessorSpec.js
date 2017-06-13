@@ -1,28 +1,28 @@
 'use strict';
 
 describe('BookProcessor', function() {
-  var wordCounter;
+  var wordProcessor;
   var str;
   var bookProcessor;
 
   beforeEach(function() {
     str = "They, they he he he clothes #Clothes and!!";
-    wordCounter = new WordCounter(str);
-    bookProcessor = new BookProcessor(wordCounter);
+    wordProcessor = new WordProcessor(str);
+    bookProcessor = new BookProcessor(wordProcessor);
   });
 
-  it('initializes with a wordCounter object', function() {
-    expect(bookProcessor.wordProcessor).toEqual(wordCounter);
+  it('initializes with a wordProcessor object', function() {
+    expect(bookProcessor.wordProcessor).toEqual(wordProcessor);
   });
 
-  describe('#runProcessing', function() {
-    it('should return countMap with number of occurances and whether it was prime or not', function() {
-      expect(bookProcessor.runProcessing()).toEqual(wordCounter.countMap);
+  describe('Process complete text', function() {
+    it('return countMap with number of occurances and whether it was prime or not', function() {
+      expect(bookProcessor.runProcessing()).toEqual(wordProcessor.countMap);
     });
   });
 
-  describe('#formatOutput', function() {
-    it('should format the output nicely', function() {
+  describe('Create a output ready to be injected', function() {
+    it('format the output nicely', function() {
       bookProcessor.dataObj = {
                                 they: [ 2, true ], and: [ 1, false ]
                               };
