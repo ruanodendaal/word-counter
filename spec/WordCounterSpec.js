@@ -14,28 +14,34 @@ describe('WordCounter', function() {
   });
 
   describe('Removing unwanted characters', function() {
-    it('should remove extra spaces', function() {
+    it('remove extra spaces', function() {
       var convertedStr = "They needed: pretty# Clothes, good fires, and_a_Mother Goose wall-paper!";
       wordCounter.removeExtraSpaces();
       expect(wordCounter.str).toEqual(convertedStr);
     });
 
-    it('should remove unwanted punctuation', function() {
+    it('remove unwanted punctuation', function() {
       var convertedStr = " They needed pretty Clothes good fires and a Mother Goose wall paper ";
-      wordCounter.removeUnwantedChars();
+      wordCounter.removePunctuation();
       expect(wordCounter.str).toEqual(convertedStr);
     });
 
-    it('should change text capitalisation', function() {
-      var convertedStr = " they needed pretty clothes good fires and a mother goose wall paper ";
+    it('change text capitalisation', function() {
+      var convertedStr = " they needed: pretty# clothes, good fires, and_a_mother goose wall-paper! ";
       wordCounter.ignoreCaps();
       expect(wordCounter.str).toEqual(convertedStr);
+    });
+
+    it('remove all unwated characters using all', function() {
+      var cleanStr = "they needed pretty clothes good fires and a mother goose wall paper";
+      wordCounter.removeUnwantedChars();
+      expect(wordCounter.str).toEqual(cleanStr);
     });
   });
 
   describe('Word counts', function() {
     it('counts how many times each word appears', function() {
-      var testStr = "They, they he clothes and fires and mother goose goose";
+      var testStr = "They, they he clothes# and fires and mother goose goose";
       wordCounter = new WordCounter(testStr);
       wordCounter.removeUnwantedChars();
       wordCounter.wordFreq()
