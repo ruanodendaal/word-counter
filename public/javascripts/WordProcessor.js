@@ -32,10 +32,10 @@ WordProcessor.prototype.wordFreq = function() {
   var words = this.str.split(/\s/);
   var wordMap = {};
   words.forEach(function(w) {
-    if (!wordMap[w]) {
-      wordMap[w] = 0;
+    if (!Number.isNaN(Number(w))) {
+        return;
     }
-    wordMap[w] ++;
+    wordMap[w] = (typeof wordMap[w] === 'undefined' ? 0 : wordMap[w]) + 1;
   });
   this.countMap = wordMap;
 };
