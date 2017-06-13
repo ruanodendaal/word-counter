@@ -53,6 +53,14 @@ describe('WordProcessor', function() {
                                       fires: 1, mother: 1,
                                       goose: 2});
     });
+
+    it('ignores numbers', function() {
+      var testStr = "7 They, they and 2";
+      wordProcessor = new WordProcessor();
+      wordProcessor.removeUnwantedChars(testStr);
+      wordProcessor.wordFreq();
+      expect(wordProcessor.countMap).toEqual({they: 2, and: 1});
+    });
   });
 
   describe('Prime number calculation', function() {
