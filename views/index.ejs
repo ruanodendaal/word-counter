@@ -3,20 +3,10 @@
 <head>
   <title>Word counter</title>
   <link rel='stylesheet' href='/public/style.css' />
-
   <meta charset="utf-8">
 </head>
 <body>
-  <h1>Welcome to word counter</h1>
-  <div>
-    Select a text file:
-    <input type="file" id="fileInput">
-  </div>
-  <button id='load-btn'>Run with chosen file</button>
-
-  <div id="wordsList">
-
-  </div>
+  <% include partials/body.ejs %>
   <% include partials/scripts.ejs %>
 </body>
 </html>

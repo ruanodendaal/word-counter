@@ -17,7 +17,6 @@ Firstly I thought about the overall problem and the steps required to solve it. 
 - Calculate if a particular word count is a prime number.
 - Output result including if a prime number e.g. "'the'  frequency: 41 | Prime number?  true".
 
-
 Then I decided on which testing framework. Jasmine since it's one I know and have used.
 
 ## How to run
@@ -46,3 +45,7 @@ $ npm install
 - Jasmine v2.5.2
 - JavaScript
 - Node v7.9.0
+
+## Struggles
+
+## Next steps

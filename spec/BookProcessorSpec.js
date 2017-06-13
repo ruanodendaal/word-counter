@@ -1,23 +1,18 @@
 'use strict';
 
 describe('BookProcessor', function() {
-  var wordProcessor;
   var str;
   var bookProcessor;
 
   beforeEach(function() {
     str = "They, they he he he clothes #Clothes and!!";
-    wordProcessor = new WordProcessor(str);
-    bookProcessor = new BookProcessor(wordProcessor);
-  });
-
-  it('initializes with a wordProcessor object', function() {
-    expect(bookProcessor.wordProcessor).toEqual(wordProcessor);
+    bookProcessor = new BookProcessor(str);
   });
 
   describe('Process complete text', function() {
     it('return countMap with number of occurances and whether it was prime or not', function() {
-      expect(bookProcessor.runProcessing()).toEqual(wordProcessor.countMap);
+      var computedObj = { they: [ 2, true ], he: [ 3, true ], clothes: [ 2, true ], and: [ 1, false ] }
+      expect(bookProcessor.runProcessing()).toEqual(computedObj);
     });
   });
 

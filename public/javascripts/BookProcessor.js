@@ -1,14 +1,15 @@
 'use strict';
 
-/* takes in a wordProcessor object and prepares the text ready
+/* takes in a WordProcessor object and prepares the text ready
   to output on the frontend */
-function BookProcessor(wordProcessor) {
+function BookProcessor(fileText, wordProcessor = new WordProcessor()) {
   this.wordProcessor = wordProcessor;
+  this.fileText = fileText;
 }
 
 // process all steps for a given file
 BookProcessor.prototype.runProcessing = function() {
-  this.wordProcessor.removeUnwantedChars();
+  this.wordProcessor.removeUnwantedChars(this.fileText);
   this.wordProcessor.wordFreq();
   this.wordProcessor.mapPrimeNumbers()
 
