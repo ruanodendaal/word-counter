@@ -4,18 +4,31 @@
   that string */
 function WordCounter(str) {
   this.countMap = {};
-  this._str = str;
+  this.str = str;
 }
 
 // remove unwanted characters including uppercase letters
 WordCounter.prototype.removeUnwantedChars = function() {
-  this._str = this._str.replace(/[\W_]+/gi, ' ').trim().toLowerCase();
-  return this._str;
-}
+  this.removePunctuation();
+  this.removeExtraSpaces();
+  this.ignoreCaps();
+};
+
+WordCounter.prototype.removePunctuation = function() {
+  this.str = this.str.replace(/[\W_]+/g, ' ');
+};
+
+WordCounter.prototype.removeExtraSpaces = function() {
+  this.str = this.str.trim();
+};
+
+WordCounter.prototype.ignoreCaps = function() {
+  this.str = this.str.toLowerCase()
+};
 
 // iterate through and count each word
 WordCounter.prototype.wordFreq = function() {
-  var words = this._str.split(/\s/);
+  var words = this.str.split(/\s/);
   var countMap = {};
   words.forEach(function(w) {
     if (!countMap[w]) {
