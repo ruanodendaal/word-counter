@@ -1,19 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
+$(document).ready(function() {
 
-  document.getElementById('load-btn').addEventListener('click', function() {
-    var reader = new FileReader();
-    reader.addEventListener('load', function() {
-      processFile(reader.result)
-    });
-
-    var fileText = document.querySelector('input').files[0]
-    reader.readAsText(fileText);
+  $('#fileInput').on("change", function() {
+    var file = document.getElementById("fileInput").files[0];
+    fileProcessor = new FileProcessor(file);
+    fileProcessor.loadFile();
   });
 
-  function processFile(fileText) {
-    var bookProcessor = new BookProcessor(fileText);
-    bookProcessor.runProcessing();
+  $('#run-btn').click(function() {
+    $.when(processFile(fileProcessor.fileText)).then(outputText());
+    ;
+    // outputText()
+    // var output = bookProcessor.formatOutput();
+    // console.log(output);
+    // document.getElementById('wordsList').innerHTML = output;
+  });
 
-    document.getElementById('wordsList').innerHTML = bookProcessor.formatOutput();
-  }
+  function processFile(file) {
+    var bookProcessor = new BookProcessor(file);
+    bookProcessor.runProcessing();
+    console.log("runProcessing() COMPLETED")
+    var output = bookProcessor.formatOutput();
+    console.log(output);
+    document.getElementById('wordsList').innerHTML = output;
+    // $('#wordList').html = output;
+  };
 });

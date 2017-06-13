@@ -16,6 +16,12 @@ describe('FileProcessor', function() {
       expect(fileProcessor.file).toEqual(file);
     });
   });
+
+  it('stores text data', function() {
+    var txt = "some text";
+    fileProcessor.storeText(txt)
+    expect(fileProcessor.fileText).toEqual(txt);
+  });
 });
 
 

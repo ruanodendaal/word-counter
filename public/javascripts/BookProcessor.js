@@ -2,8 +2,8 @@
 
 /* takes in a WordProcessor object and prepares the text ready
   to output on the frontend */
-function BookProcessor(fileText, wordProcessor = new WordProcessor()) {
-  this.wordProcessor = wordProcessor;
+function BookProcessor(fileText) {
+  this.wordProcessor = new WordProcessor();
   this.fileText = fileText;
 }
 

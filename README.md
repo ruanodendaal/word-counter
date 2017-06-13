@@ -36,6 +36,8 @@ $ npm install
 
 4. Visit `http://localhost:3000/` in your browser
 
+5. You can use your own or the file `railway-children.txt` in this repository.
+
 ### To run tests
 - Find the `SpecRunner.html` in project root.
 - Open it in your browser.
@@ -46,6 +48,19 @@ $ npm install
 - JavaScript
 - Node v7.9.0
 
+## Successes
+
+- TDD'd all my code.
+- Prime algorithm, after some research I found that I could increase the efficiency of this calculation by only checking numbers up to its square root. I'm not sure how to measure this but it has to be less...right?
+
 ## Struggles
 
-## Next steps
+- Node vs Browser. I spent a bit of time deciding whether or not to use Node or do this in the browser. In the end I went for the browser and tried to use Node again later. <span style="color:red">*Learning:*</span> commit to final decision.
+- Object / class design. I feel like I jumped into writing code too soon which mean I spent time later renaming files.
+<span style="color:red">*Learning:*</span> Take more time diagraming the architecture before writing code.
+
+
+## Future enhancements
+
+- Error Handling: Implement some error handling on the file load.
+-
