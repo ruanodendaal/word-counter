@@ -55,9 +55,9 @@ $ npm install
 
 ## Struggles
 
-1. Node vs Browser. I spent a bit of time deciding whether or not to use Node or do this in the browser. In the end I went for the browser and tried to use Node again later. <span style="color:red">*Learning:*</span> commit to final decision.
-2. Object / class design. I feel like I jumped into writing code too soon which mean I spent time later renaming files. <span style="color:red">*Learning:*</span> Take more time diagraming the architecture before writing code.
-3. Abstracting the FileProcessor into a separate file. WIP can be found on branch `file-processor`. Came across issues waiting for the WordProcessor to complete. <span style="color:red">*Learning:*</span> Look into creating Promises.
+1. Node vs Browser. I spent a bit of time deciding whether or not to use Node or do this in the browser. In the end I went for the browser and tried to use Node again later. **Learning:** commit to final decision.
+2. Object / class design. I feel like I jumped into writing code too soon which mean I spent time later renaming files. **Learning:** Take more time diagraming the architecture before writing code.
+3. Abstracting the FileProcessor into a separate file. WIP can be found on branch `file-processor`. Came across issues waiting for the WordProcessor to complete. **Learning:** Look into creating Promises.
 
 
 ## Future enhancements
